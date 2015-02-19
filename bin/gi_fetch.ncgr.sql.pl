@@ -1,11 +1,11 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 # $Id: gi_fetch.ncgr.sql.pl,v 1.5 2004/11/03 00:54:44 givans Exp $
 #
 #
 # Fetches GI list from NCBI
 use Getopt::Std;
 use LWP::UserAgent;
-use lib '/home/cgrb/cgrb/givans/lib';
+use lib '/home/sgivan/projects/PhyloSeqs/lib';
 use NCGRDB;
 
 my $ua = LWP::UserAgent->new(timeout	=>	15);

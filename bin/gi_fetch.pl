@@ -4,8 +4,8 @@
 #
 # Fetches GI list from NCBI
 #
-# Script written by Scott Givan, Center for Gene Research and
-# Biotechnology, Oregon State University
+# Script written by Scott Givan, Informatics Research Core Facility
+# University of Missouri
 #
 #
 
@@ -92,7 +92,6 @@ my $http = "http://eutils.ncbi.nlm.nih.gov/entrez/eutils";
 
 open(GI,">$file") || die "can't open '$file': $!" if ($file);
 
-#my $esearch_count = "$http/esearch.fcgi?email=givans\@cgrb.oregonstate.ed&tool=gi_fetch&db=$db&term=";
 my $esearch_count = "$http/esearch.fcgi?email=givans\@missouri.edu&tool=gi_fetch&db=$db&term=";
 my $esearch_count_result = get($esearch_count . $term);
 
