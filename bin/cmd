@@ -1,0 +1,6 @@
+for file in `ls gamma*`; do bsub -J $file blastdbcmd -db nr -dbtype prot -entry_batch $file -out $file.pfa -logfile $file.log; done
+for file in gamma_o?.pfa; do echo $file; bsub -Is fseqs $file; done
+for file in gamma_k?.pfa; do echo $file; bsub -Is fseqs $file; done
+gi_fetch.pl -d protein -s 'alphaproteobacteria[ORGN]' -o alpha_gi.txt
+for file in `ls x??`; do echo $file; bsub -J $file blastdbcmd -db nr -dbtype prot -entry_batch $file -out $file.pfa -logfile $file.log; done
+bs -J cat -m compute-0-1 'cat x??.pfa >> alpha.pfa'
